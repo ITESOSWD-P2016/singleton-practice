@@ -8,11 +8,12 @@ import com.iteso.singleton.iPhone;
  */
 public class BedroomPhone implements iPhone {
 
-    public void dialNumber(int number) {
-        PhoneLine phoneLine = new PhoneLine();
-        if (!checkAvailabilityOfPhoneLine(phoneLine)){
-            phoneLine.callNumber(number);
-        }
+    public String dialNumber(int number) {
+        PhoneLine phoneLine = PhoneLine.getPhoneLine();
+        if (!checkAvailabilityOfPhoneLine(phoneLine)) 
+        	return phoneLine.callNumber(number);
+        else 
+        	return "The line is busy.";
     }
 
     public boolean checkAvailabilityOfPhoneLine(PhoneLine phoneLine) {
