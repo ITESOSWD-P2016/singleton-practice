@@ -9,7 +9,7 @@ import com.iteso.singleton.iPhone;
 public class GaragePhone implements iPhone {
 
     public void dialNumber(int number) {
-        PhoneLine phoneLine = new PhoneLine();
+        PhoneLine phoneLine = PhoneLine.getUniquePhoneLine();
         if (!checkAvailabilityOfPhoneLine(phoneLine)){
             phoneLine.callNumber(number);
         }

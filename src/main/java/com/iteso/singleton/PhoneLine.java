@@ -12,10 +12,15 @@ public class PhoneLine {
 
     private boolean busyLine = false;
     private int lastnumber = 0;
+    private static PhoneLine uniquePhoneLine;
 
-    public PhoneLine (){
+   private PhoneLine(){}
 
-    }
+        public static PhoneLine getUniquePhoneLine(){
+            if (uniquePhoneLine== null)
+                uniquePhoneLine = new PhoneLine();
+            return uniquePhoneLine;
+        }
 
     public void callNumber(int phoneNumber){
         System.out.println("Calling " + phoneNumber);
