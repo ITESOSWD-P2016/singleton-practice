@@ -56,4 +56,7 @@ public class PhoneLine {
     public void setLastnumber(int lastnumber) {
         this.lastnumber = lastnumber;
     }
+
+    public static class getInstance extends PhoneLine {
+    }
 }
