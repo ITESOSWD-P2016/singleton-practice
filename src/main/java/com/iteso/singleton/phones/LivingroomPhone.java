@@ -8,14 +8,16 @@ import com.iteso.singleton.iPhone;
  */
 public class LivingroomPhone implements iPhone {
 
-    public void dialNumber(int number) {
-        PhoneLine phoneLine = new PhoneLine();
-        if (!checkAvailabilityOfPhoneLine(phoneLine)){
-            phoneLine.callNumber(number);
+
+        public void dialNumber(int number) {
+            PhoneLine phoneLine = new PhoneLine.getInstance();
+            if (!checkAvailabilityOfPhoneLine(phoneLine)){
+                phoneLine.callNumber(number);
+            }
         }
-    }
 
     public boolean checkAvailabilityOfPhoneLine(PhoneLine phoneLine) {
+
         return phoneLine.isBusyLine();
     }
 }
