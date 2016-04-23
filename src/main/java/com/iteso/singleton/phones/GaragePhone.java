@@ -8,11 +8,12 @@ import com.iteso.singleton.iPhone;
  */
 public class GaragePhone implements iPhone {
 
-    public void dialNumber(int number) {
-        PhoneLine phoneLine = new PhoneLine();
+    public String dialNumber(int number) {
+        PhoneLine phoneLine = PhoneLine.getInstance();
         if (!checkAvailabilityOfPhoneLine(phoneLine)){
-            phoneLine.callNumber(number);
+            return phoneLine.callNumber(number);
         }
+        else return "Line is busy";
     }
 
     public boolean checkAvailabilityOfPhoneLine(PhoneLine phoneLine) {

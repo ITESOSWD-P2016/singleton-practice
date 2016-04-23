@@ -13,16 +13,25 @@ public class PhoneLine {
     private boolean busyLine = false;
     private int lastnumber = 0;
 
+    private static PhoneLine uniquePhoneline;
+
     public PhoneLine (){
 
     }
 
-    public void callNumber(int phoneNumber){
-        System.out.println("Calling " + phoneNumber);
+    public static PhoneLine getInstance(){
+        if(uniquePhoneline==null)
+            uniquePhoneline= new PhoneLine();
+
+        return uniquePhoneline;
+    }
+
+    public String callNumber(int phoneNumber){
 
         setLastnumber(phoneNumber);
         setBusyLine(true);
 
+        return "Calling " + phoneNumber;
     }
 
     public void hangUp(){
