@@ -9,7 +9,7 @@ import com.iteso.singleton.iPhone;
 public class BedroomPhone implements iPhone {
 
     public void dialNumber(int number) {
-        PhoneLine phoneLine = new PhoneLine();
+        PhoneLine phoneLine = new PhoneLine.getInstance();
         if (!checkAvailabilityOfPhoneLine(phoneLine)){
             phoneLine.callNumber(number);
         }

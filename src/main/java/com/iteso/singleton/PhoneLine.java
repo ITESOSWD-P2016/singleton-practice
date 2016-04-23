@@ -12,9 +12,17 @@ public class PhoneLine {
 
     private boolean busyLine = false;
     private int lastnumber = 0;
+    private static PhoneLine Instance;
 
-    public PhoneLine (){
+    private PhoneLine(){
+    }
+    //singleton pattern
 
+    public static PhoneLine getInstance(){
+        if(Instance== null){
+            Instance = new PhoneLine();
+        }
+        return Instance;
     }
 
     public void callNumber(int phoneNumber){
@@ -32,10 +40,12 @@ public class PhoneLine {
     }
 
     public boolean isBusyLine() {
+
         return busyLine;
     }
 
     public void setBusyLine(boolean busyLine) {
+
         this.busyLine = busyLine;
     }
 
