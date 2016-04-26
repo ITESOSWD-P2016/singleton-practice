@@ -22,12 +22,12 @@ public class PhoneLine {
             return uniquePhoneLine;
         }
 
-    public void callNumber(int phoneNumber){
-        System.out.println("Calling " + phoneNumber);
+    public String callNumber(int phoneNumber){
 
         setLastnumber(phoneNumber);
         setBusyLine(true);
 
+            return "Calling " + phoneNumber;
     }
 
     public void hangUp(){
